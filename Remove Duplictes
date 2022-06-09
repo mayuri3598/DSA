@@ -1,0 +1,28 @@
+const LinkedListNode = class {
+    constructor(nodeData) {
+        this.data = nodeData;
+        this.next = null;
+    }
+};
+
+// Complete the function below
+
+var deleteDuplicates = function(head) {
+    if (!head || !head.next) {
+        return head;
+    }
+
+    const listHash = {};
+    let current = head;
+    let tmp = current;
+
+    while (current) {
+        while(current.next && current.data === current.next.data) {
+            current.next = current.next.next;
+        }
+        current = current.next;
+    }
+
+   return tmp;
+    
+};

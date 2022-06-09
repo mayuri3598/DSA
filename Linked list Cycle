@@ -1,0 +1,20 @@
+const LinkedListNode = class {
+    constructor(nodeData) {
+        this.data = nodeData;
+        this.next = null;
+    }
+};
+// Complete the function below
+var hasCycle = function(head) {
+       const node = new Set();
+       //console.log(node)
+    let current = head;
+    while (current !== null) {
+        if (node.has(current)) {
+            return true;
+        }
+        node.add(current, 1);
+        current = current.next;
+    }
+    return false;
+};
