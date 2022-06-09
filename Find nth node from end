@@ -1,0 +1,23 @@
+const LinkedListNode = class {
+    constructor(nodeData) {
+        this.data = nodeData;
+        this.next = null;
+    }
+};
+var size=0;
+
+function nth_node(head,n){
+    let prev=head;
+    while(prev.next!==null){
+        prev=prev.next;
+        size++;
+    }
+    size++;
+    var count=1;
+    var current= head;
+    while(count!==size-n+1){
+        count++;
+        current=current.next;
+    }
+    return current.data;
+}
